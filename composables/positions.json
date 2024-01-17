@@ -1,0 +1,18 @@
+[
+  {
+    "weight": 1,
+    "name": "Pivô"
+  },
+  {
+    "weight": 1,
+    "name": "Ala-Pivô"
+  },
+  {
+    "weight": 2,
+    "name": "Armador"
+  },
+  {
+    "weight": 2,
+    "name": "Ala-Armador"
+  }
+]
