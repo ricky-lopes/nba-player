@@ -1,5 +1,5 @@
-export type Teams = {
-    acronym: string,
+export type Team = {
+    value: string,
     name: string    
 }
 
@@ -10,12 +10,13 @@ export type Player = {
 }
 
 export type Position = {
-    weight: number,
+    value: number,
     name: string
 }
 
 export type NBAData = {
-    teams: Teams[],
+    teams: Team[],
     positions: Position[],
-    players: Player[]
+    playersPivot: Player[],
+    playersPointGuard: Player[]
 }

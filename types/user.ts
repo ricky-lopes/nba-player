@@ -7,3 +7,8 @@ export type User = {
     agression: false,
     angry: false
 }
+
+export type UserPlayer = {
+    image: string,
+    label: string
+}
