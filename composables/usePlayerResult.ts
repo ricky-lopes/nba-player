@@ -24,33 +24,44 @@ const fixedPlayer = [
 ] as UserPlayer[]
 
 
-export default (user: User): UserPlayer => {
+export default () => {
     const nbaData = useNBAData()
-
+    
     const gabrielVariants = ["Gabriel".toUpperCase, "gab".toUpperCase()]
     const rickyVariants = ["Henrique".toUpperCase(), "Ricky".toUpperCase(), "Calvo".toUpperCase()]
 
-    if(gabrielVariants.includes(user.name.toUpperCase())) {
-        return fixedPlayer[0]
-    } else if (rickyVariants.includes(user.name.toUpperCase())) {
-        return fixedPlayer[1]
-    } else if(user.angry && user.agression) {
-        return fixedPlayer[2]
-    } else if(user.angry) {
-        return fixedPlayer[3]
-    } else if(user.agression) {
-        return fixedPlayer[4]
-    } else {
-        let player
-        if(user.position == 1) {
-            player = nbaData.playersPivot[Math.floor(Math.random() * nbaData.playersPivot.length)]
+    const playerResult = ref<UserPlayer>()
+
+    const getPlayerResult = (user: User) => {
+        if(gabrielVariants.includes(user.name.toUpperCase())) {
+            playerResult.value = fixedPlayer[0]
+        } else if (rickyVariants.includes(user.name.toUpperCase())) {
+            playerResult.value = fixedPlayer[1]
+        } else if(user.angry && user.agression) {
+            playerResult.value = fixedPlayer[2]
+        } else if(user.angry) {
+            playerResult.value = fixedPlayer[3]
+        } else if(user.agression) {
+            playerResult.value = fixedPlayer[4]
         } else {
-            player = nbaData.playersPointGuard[Math.floor(Math.random() * nbaData.playersPointGuard.length)]
+            let player
+            if(user.position == 1) {
+                player = nbaData.playersPivot[Math.floor(Math.random() * nbaData.playersPivot.length)]
+            } else {
+                player = nbaData.playersPointGuard[Math.floor(Math.random() * nbaData.playersPointGuard.length)]
+            }
+    
+            playerResult.value = {
+                image: player.image,
+                label: `${player.firstName} ${player.lastName}`
+            }
         }
 
-        return {
-            image: player.image,
-            label: `${player.firstName} ${player.lastName}`
-        }
+        return playerResult.value
+    }
+
+    return {
+        getPlayerResult,
+        playerResult
     }
 }
