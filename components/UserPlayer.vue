@@ -4,7 +4,8 @@
             <NuxtImg :src="image" />
         </div>
         <div class="text-center">
-            <h3 class="text-center text-4xl font-bold">{{ name }} </h3>
+            <h3 class="text-center text-4xl font-bold">{{ name }}</h3>
+            <h3 class="text-center text-2xl font-medium text-gray-200">{{ comments }} </h3>
         </div>
     </div>
 </template>
@@ -19,6 +20,10 @@ defineProps({
     name: {
         type: String,
         required: true
+    },
+    comments: {
+        type: String,
+        default: ""
     }
 })
 

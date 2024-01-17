@@ -10,5 +10,6 @@ export type User = {
 
 export type UserPlayer = {
     image: string,
-    label: string
+    label: string,
+    comments: string
 }

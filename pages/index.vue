@@ -53,7 +53,11 @@
         <h1 class="font-bold">Seu jogador é:</h1>
         <UIcon @click="toggleModal()" name="i-heroicons-x-mark" class="cursor-pointer" />
       </div>
-      <user-player :image="playerResult.image" :name="playerResult.label"> </user-player>
+      <user-player 
+        :image="playerResult.image" 
+        :name="playerResult.label"
+        :comments="playerResult.comments">
+      </user-player>
     </div>
    </UModal>
 </template>
