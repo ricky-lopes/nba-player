@@ -32,7 +32,7 @@ const fixedPlayer = [
 export default () => {
     const nbaData = useNBAData()
     
-    const gabrielVariants = ["Gabriel".toUpperCase, "gab".toUpperCase()]
+    const gabrielVariants = ["Gabriel".toUpperCase(), "gab".toUpperCase()]
     const rickyVariants = ["Henrique".toUpperCase(), "Ricky".toUpperCase(), "Calvo".toUpperCase()]
 
     const playerResult = ref<UserPlayer>()

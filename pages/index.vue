@@ -54,9 +54,9 @@
         <UIcon @click="toggleModal()" name="i-heroicons-x-mark" class="cursor-pointer" />
       </div>
       <user-player 
-        :image="playerResult.image" 
-        :name="playerResult.label"
-        :comments="playerResult.comments">
+        :image="playerResult!.image" 
+        :name="playerResult!.label"
+        :comments="playerResult!.comments">
       </user-player>
     </div>
    </UModal>
