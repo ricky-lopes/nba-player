@@ -6,6 +6,6 @@
 
 <style scoped>
 .container {
-    @apply w-full h-screen p-8 flex flex-col items-start;
+    @apply w-full h-screen p-8 flex flex-col items-start min-w-full;
 }
 </style>
