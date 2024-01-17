@@ -1,7 +1,7 @@
 <template>
     <h1 class="text-xl font-bold">Qual Jogador de Basquete é você?</h1>
 
-    <UForm :validate="validate" :state="user" class="space-y-4 my-4 min-w-96">
+    <UForm :validate="validate" :state="user" class="space-y-4 my-4 w-full">
       <UFormGroup label="Nome" name="name">
         <UInput color="cyan" v-model="user.name" />
       </UFormGroup>
