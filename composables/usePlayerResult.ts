@@ -38,7 +38,7 @@ export default () => {
     const playerResult = ref<UserPlayer>()
 
     const getPlayerResult = (user: User) => {
-        if(gabrielVariants.includes(user.name.toUpperCase())) {
+        if(user.name.toUpperCase().includes('GABRIEL' || 'GAB')) {
             playerResult.value = fixedPlayer[0]
         } else if (rickyVariants.includes(user.name.toUpperCase())) {
             playerResult.value = fixedPlayer[1]
