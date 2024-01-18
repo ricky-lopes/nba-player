@@ -28,6 +28,24 @@ const fixedPlayer = [
     }
 ] as UserPlayer[]
 
+const fixedGabrielPlayer = [
+    {
+        image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629029.png',
+        label: 'Luka Doncic',
+        comments: 'Só visão e passes fora de série!'
+    },
+    {
+        image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3907497.png&w=350&h=254',
+        label: 'Dejounte Murray',
+        comments: ''
+    },
+    {
+        image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4433247.png&w=350&h=254',
+        label: 'Jonathan Kuminga',
+        comments: ''
+    }
+] as UserPlayer[]
+
 
 export default () => {
     const nbaData = useNBAData()
@@ -39,7 +57,7 @@ export default () => {
 
     const getPlayerResult = (user: User) => {
         if(user.name.toUpperCase().includes('GABRIEL' || 'GAB')) {
-            playerResult.value = fixedPlayer[0]
+            playerResult.value = fixedGabrielPlayer[Math.floor(Math.random() * fixedGabrielPlayer.length)]
         } else if (rickyVariants.includes(user.name.toUpperCase())) {
             playerResult.value = fixedPlayer[1]
         } else if(user.angry && user.agression) {
